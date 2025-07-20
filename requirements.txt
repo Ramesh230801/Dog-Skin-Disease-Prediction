@@ -1,8 +1,0 @@
-numpy==1.23.5
-scikit-learn==1.0.2
-seaborn==0.12.2
-tensorflow==2.10.0
-pillow==9.2.0
-matplotlib==3.5.3
-h5py==3.7.0
-scipy==1.9.3
