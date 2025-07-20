@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Skin Disease Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        input[type="file"] {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .btn {
+            background: #3d12aa;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background: #555;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .remedy {
+            background: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: left;
+        }
+        img {
+            max-width: 50%;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dog Skin Disease Detection</h1>
+        <form class="upload-form" action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button class="btn" type="submit">Analyze</button>
+        </form>
+
+        {% if result %}
+            <h2>The uploaded image is identified as Disease: {{ result }}</h2>
+            <img src="{{ img_path }}" alt="Uploaded Image">
+            
+            {% if remedy %}
+                <div class="remedy">
+                    <h3>Recommended Remedy:</h3>
+                    <p>{{ remedy }}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
