@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 app = Flask(__name__)
 
 # Load the trained model
-MODEL_PATH = "Dog_skin_model.h5"
+MODEL_PATH = "dog_skin397.h5"
 model = tf.keras.models.load_model(MODEL_PATH)
 
 
