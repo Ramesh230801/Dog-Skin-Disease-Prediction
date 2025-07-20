@@ -1,7 +1,3 @@
-services:
-  - type: web
-    name: dog-skin-disease-prediction
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+build:
+  environment:
     pythonVersion: 3.10
